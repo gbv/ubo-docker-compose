@@ -36,6 +36,8 @@ services:
     volumes:
     - ${APP_HOME}:/mcr/home/
     - ${APP_DATA}:/mcr/data/
+    - ${APP_TMP}:/mcr/tmp/
+    - ${APP_LOG}:/mcr/logs/
     depends_on:
       - ubo-db
       - ubo-solr
