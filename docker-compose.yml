@@ -22,7 +22,7 @@ services:
     ports:
       - ${SOLR_HTTP}:8983
   ubo:
-    image: vzgreposis/ubo:split
+    image: vzgreposis/ubo:master
     restart: always
     environment:
       APP_CONTEXT: ${APP_CONTEXT}
