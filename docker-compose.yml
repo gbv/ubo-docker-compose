@@ -6,14 +6,14 @@ services:
     restart: always
     environment:
       POSTGRES_USER: ${DB_USER}
-      POSTGRES_PASSWORD: mypassword
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
       POSTGRES_DB: ubo
     volumes:
     - ${DB_DATA}:/var/lib/postgresql/data/
     ports:
       - ${DB_PORT}:5432
   ubo-solr:
-    image: vzgreposis/ubo-solr:master
+    image: vzgreposis/ubo-solr:main
     restart: always
     volumes:
     - ${SOLR_DATA}:/opt/solr-data
@@ -22,7 +22,7 @@ services:
     ports:
       - ${SOLR_HTTP}:8983
   ubo:
-    image: vzgreposis/ubo:master
+    image: vzgreposis/ubo:main
     restart: always
     environment:
       APP_CONTEXT: ${APP_CONTEXT}
